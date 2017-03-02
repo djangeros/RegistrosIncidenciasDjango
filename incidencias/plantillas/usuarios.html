@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block titulo %} Usuarios registrados {% endblock %}
+
+{% block encabezado %}
+  <h1>Colaboradores</h1>
+{% endblock %}
+
+{% block contenido %}
+<div class="contenedor">
+<h3><span class="label label-primary">Usuarios Registrados</span></h3>
+<table class="table table-striped">
+  <thead>
+  	<tr>
+  		<th>Registro</th>
+  		<th>Nombre</th>
+  		<th>Apellido</th>
+  		<th>Correo</th>
+  		<th>Último Ingreso</th>
+  	</tr>
+  </thead>
+  <tbody>
+  <ul>
+  <tr>
+  	<td>
+	{% for dato in usuarios %}
+	<li>{{dato.username|capfirst}}</li>
+	{% empty %}
+	<li>No hay usuarios registrados, aún.</li>
+	{% endfor %}
+	</ul></td>
+	<td>
+	{% for dato in usuarios %}
+	<li>{{dato.first_name}}</li>
+	{% empty %}
+	<li>No hay usuarios registrados, aún.</li>
+	{% endfor %}
+	</ul></td>
+	<td>
+	{% for dato in usuarios %}
+	<li>{{dato.last_name}}</li>
+	{% empty %}
+	<li>No hay usuarios registrados, aún.</li>
+	{% endfor %}
+	</ul></td>
+	<td>
+	{% for dato in usuarios %}
+	<li>{{dato.email}}</li>
+	{% empty %}
+	<li>No hay usuarios registrados, aún.</li>
+	{% endfor %}
+	</ul></td>
+	<td>
+	{% for dato in usuarios %}
+	<li>{{dato.last_login}}</li>
+	{% empty %}
+	<li>No hay usuarios registrados, aún.</li>
+	{% endfor %}
+	</ul></td>
+</tr>
+	</tbody></table>
+</div>
+{% endblock %}
+
+
+	

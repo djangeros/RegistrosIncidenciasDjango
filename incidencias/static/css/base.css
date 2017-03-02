@@ -1,0 +1,11 @@
+/* algunos ejemplos con CSS */
+body, header, footer, div, h1, h2, ul, li, a { 
+}
+header {
+
+}
+
+.activo { 
+  font-weight: bold; 
+
+}

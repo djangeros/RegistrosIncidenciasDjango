@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset='utf-8'>
+  <title>Registro de Incidencias- {% block titulo %}{% endblock %}</title>
+  <link rel='stylesheet' href='{{STATIC_URL}}css/style.css'>
+  <link rel='stylesheet' href='{{STATIC_URL}}css/normalize.css'>
+  <!-- Latest compiled and minified CSS -->
+<link rel='stylesheet' href='{{STATIC_URL}}css/bootstrap.min.css'>
+
+<!-- Optional theme -->
+<link rel='stylesheet' href='{{STATIC_URL}}css/bootstrap-theme.min.css'>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src='{{STATIC_URL}}js/bootstrap.min.js'></script>
+  <link rel='shortcut icon' href='{{STATIC_URL}}img/icono.PNG'>
+  {% block style_css %}{% endblock %}
+  <script src='{{STATIC_URL}}js/jquery-1.7.2.min.js'></script>
+  <script src='{{STATIC_URL}}js/demo.js'></script>
+  <script type="text/javascript" src="js/modernizr.custom.js"></script>
+</head>
+<body>
+
+      <!-- Navigation
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href='/ingresar'>Incidencias Menores</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          
+          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav nav-pills">
+              <li role="presentation" class="active"><a href='/ingresar' class="page-scroll">INGRESAR</a></li>
+              <li role="presentation"><a href='/cerrar' class="page-scroll">SALIR</a></li>
+          </ul>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+  <header>
+	{% block encabezado %}{% endblock %}
+	<hr>
+  </header>	
+  <section class='contenido'>
+	{% block contenido %}{% endblock %}
+  </section>
+  <footer>
+  <p>Djangeros</p>
+  <p>Control de Incidencias &copy;2017</p>
+  </footer>
+</body>
+</html>

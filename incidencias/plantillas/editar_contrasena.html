@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<br>
+<br>
+    <form class="form-horizontal" method="post">{% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<h3><span class="label label-primary">Cambiar Contraseña:</span></h3>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="piCurrPass">Contraseña Actual</label>
+  <div class="col-md-4">
+    <input id="piCurrPass" name="actual_password" type="password" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="piNewPass">Nueva Contraseña</label>
+  <div class="col-md-4">
+    <input id="piNewPass" name="password" type="password" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="piNewPassRepeat">Repetir Nueva Contraseña</label>
+  <div class="col-md-4">
+    <input id="piNewPassRepeat" name="password2" type="password" placeholder="" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="bCancel"></label>
+  <div class="col-md-8">
+    <button class="btn btn-primary" type="submit">Actualizar contraseña</button>
+        <a href="/inicio" class="btn btn-warning" type="submit">Cancelar</a>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+{% endblock contenido %}

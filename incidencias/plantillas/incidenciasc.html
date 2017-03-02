@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block titulo %} Incidencias Registradas {% endblock %}
+{% block encabezado %}
+{% endblock %}
+
+{% block contenido %}
+<div class="contenedor">
+<h3><span class="label label-primary">Cierre de Incidencias:</span></h3>
+<p>
+    Incidencias pendientes de cierre: 
+     {% with total=datos.count %} 
+    {{total}} incidencia{{total|pluralize}}
+   {% endwith %}
+  </p>
+</div>
+<div class="contenedor">
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+  	<tr class="info" >
+  		<th>Incidencia</th>
+  		<th>Documento Reporte</th>
+  		<th>Registro Reporte</th>
+  		<th>Descripción</th>
+  		<th>Fecha Reporte</th>
+  	</tr>
+  </thead>
+  <tbody>
+  {% for dato1 in datos %}
+  <tr><td>
+<ul>
+	<li>
+		<a href='/cierre/{{dato1.id}}'>INC {{dato1.id}}</a>
+	</li>
+</ul></td>
+<td>
+<ul>
+	<li class="{% cycle 'impar' 'par' %}">{{dato1.docrepo|title}}</li>
+</ul></td>
+<td>
+<ul>
+	<li style="text-transform:uppercase;" class="{% cycle 'impar' 'par' %}">{{dato1.Regrepo}}</li>
+</ul></td>
+<td>
+<ul>
+	<li style="text-transform:uppercase;" class="{% cycle 'impar' 'par' %}">{{dato1.descripcion}}</li>
+</ul></td>
+<td>
+<ul>
+	<li class="{% cycle 'impar' 'par' %}">{{dato1.fecharepo|date:"SHORT_DATE_FORMAT" }}</li>
+</ul></td>
+</tr>
+</div></tbody>
+	{% empty %}
+	<li>No hay incidencias pendientes de cierre</li>
+	{% endfor %}</table>
+{% endblock %}

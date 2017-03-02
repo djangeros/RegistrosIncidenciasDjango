@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block titulo %}Bienvenido{% endblock %}
+{% block encabezado %} 
+{% endblock %}
+{% block contenido %}
+<div class="contenedor">
+<div class="panel panel-primary">
+    <div class="img_error2">
+        <img src="{{STATIC_URL}}img/banner1.jpg" class="img-responsive" align="center">
+    </div>
+</div>
+<div class="grafico">
+    <h1><span class="label label-primary">INCIDENCIAS: POR ÁREA</span></h1>
+    <div id="usuarios_14_dias">
+        <div style="width: 50%">
+            <canvas id="canvas" height="800" width="1000"></canvas>
+        </div>
+        
+<div class="leyenda">
+    <div id="square">Asignadas</div><style> #square {width:120px; height:20px; background:rgba(0, 82, 204,0.5);} </style>
+    <div id="square2">Concluidas</div><style> #square2 {width:120px; height:20px; background: rgba(151,187,205,0.5);} </style>
+</div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">REPORTES ADICIONALES:</div>
+    <div class="reporte">
+    <a class="btn btn-primary" href='/reportes'>Totales</a>
+    <a class="btn btn-primary" href='/reportes1'>Promedios Incidencias</a>
+    <a class="btn btn-primary" href='/reportes2'>Incidencias / Área</a>
+    <a class="btn btn-primary" href='/reportes3'>Procesos/ Área</a>
+</div>
+</div>
+</div>
+<script>
+    var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
+
+    var barChartData = {
+        labels : ["6N0000","6N0200","6N0300","6N0400","6N0500","6N0600"],
+        datasets : [
+            {   
+                label: "Asignadas",
+                fillColor : "rgba(0, 82, 204,0.5)",
+                strokeColor : "rgba(0, 82, 204,0.8)",
+                highlightFill: "rgba(0, 82, 204,0.5)",
+                highlightStroke: "rgb(0, 82, 204,0.5)",
+                data : [{{info6}},{{info1}},{{info2}},{{info4}},{{info5}},{{info3}}]
+            },
+            {
+                label: "Concluidas",
+                fillColor: "rgba(151,187,205,0.5)",
+                strokeColor: "rgba(151,187,205,0.8)",
+                highlightFill: "rgba(151,187,205,0.75)",
+                highlightStroke: "rgba(151,187,205,1)",
+                data: [{{info6s}},{{info1s}},{{info2s}},{{info4s}},{{info5s}},{{info3s}}]
+            }
+        ]
+
+
+    }
+    window.onload = function(){
+        var ctx = document.getElementById("canvas").getContext("2d");
+        window.myBar = new Chart(ctx).Bar(barChartData, {
+            responsive : true
+        });
+    }
+
+    </script>
+    
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block titulo %}Registro Solución Incidencia{% endblock %}
+{% block style_css %}
+
+<script type="text/javascript">
+
+function confSubmit(form) {
+if (confirm("Está seguro que desea grabar esta asignación?")) {
+form.submit();
+}
+
+else {
+alert("Ud. decidió no grabar la asignación!");
+}
+}
+</script>
+{% endblock %}
+{% block encabezado %} 
+{% endblock %}
+{% block contenido %}
+<div class="contenedor">
+<h3><span class="label label-primary">Asignar Solución:</span></h3>
+<div class="panel panel-default">
+<div class="panel-body">
+<form class="form-horizontal" method='post' enctype='multipart/form-data' action=''>
+	<div class="form group">{% csrf_token %}
+		<div class="form-group">
+    		<label class="col-sm-2 control-label">N° Incidencia:</label> 
+    	<div class="col-sm-4">
+      	<input type="text" class="form-control" name="incidencia" value="{{inci.pk}}" disabled="">
+    	</div>
+  		</div>
+  		<div class="form-group">
+    		<label class="col-sm-2 control-label">UUOO Emite Requerimiento:(*)</label>
+  		<div class="col-sm-4">
+  		<select class="form-control" name="uuoosol">
+  		<option value="" selected disabled>-----------</option>
+  		<option>6N0000</option>
+        <option>6N0200</option>
+        <option>6N0300</option>
+        <option>6N0310</option>
+        <option>6N0320</option>
+        <option>6N0400</option>
+        <option>6N0500</option>
+        <option>6N0600</option>
+        <option>801000</option>
+		</select>
+		</div>
+		</div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Fecha Asignada de Solución Reporte:(*)</label>
+      <div class="col-sm-4">
+        <input type="date" class="form-control" name="fechaeje" >
+      </div>
+      </div>
+      
+  		<div class="form-group">
+    		<label class="col-sm-2 control-label">UUOO Area Usuaria que Atiende:(*)</label>
+  		<div class="col-sm-4">
+  		<select class="form-control" name="uuooati">
+  		<option value="" selected>6N0600</option>
+        <option>6N0000</option>
+		</select>
+		</div>
+		</div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Tipo de Atención:(*)</label>
+      <div class="col-sm-4">
+      <select class="form-control" name="tipo_ate">
+      <option value="" selected disabled>-----------</option>
+      <option>Mantenimiento</option>
+        <option>Contrataciones</option>
+        <option>Normativa</option>
+    </select>
+    </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Registro Supervisor OSA:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="1810" maxlength="4" name="regsup">
+      </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Registro Usuario OSA que Atiende:</label>
+      <div class="col-sm-2">
+      <select class="form-control" name="reguosa">
+      <option value="" selected disabled>-----------</option>
+      <option>TEC01</option>
+      <option>1810</option>
+        <option>RN55</option>
+        <option>RT38</option>
+        <option>RO30</option>
+        <option>RO29</option>
+        <option>QF44</option>
+        <option>RS68</option>
+        <option>3804</option>
+        <option>3378</option>
+        <option>6571</option>
+        <option>6446</option>
+        <option>2255</option>
+    </select>
+    </div>
+    </div>
+      <input type="hidden" class="form-control" name="flg_solucion" value='1'>	
+  		</div>
+    <button type='submit' id="button1id" class="btn btn-primary" onClick="confSubmit(this.form);">Registrar </button>
+    <a class="btn btn-primary" href='/asignaciones'>Regresar  <SPAN class="badge"><</SPAN></a>
+	</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

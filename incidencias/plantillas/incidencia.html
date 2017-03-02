@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block titulo %} {{incidencia.item}} {% endblock %}
+
+{% block encabezado %} 
+  <h1>{{incidencia.item}}</h1>
+{% endblock %}
+
+{% block contenido %}
+<div>
+	<br>
+</div>
+<div class="contenedor">
+	<a class="btn btn-primary" href='/inicio'>Regresar  <SPAN class="badge"><</SPAN></a>
+</div>
+<div class="contenedor">
+<div class="panel panel-primary">
+<div class="panel-heading">Incidencia: INC {{incidencia.id}}</div>
+<table class="table table-hover">
+<thead>
+	<th>Fecha Reporte</th>
+	<th>Documento Reporte</th>
+	<th>Registro Usuario Reporte</th>
+	<th>Descripción Reporte</th>
+</thead>
+<tbody>
+	<tr>
+	<td><p>{{incidencia.fecharepo}}</p>
+	</td>
+	<td><p>{{incidencia.docrepo}}</p>
+	</td>
+	<td><p>{{incidencia.Regrepo}}</p>
+	</td>
+	<td><p>{{incidencia.descripcion}}</p>
+	</td>
+	</tr></tbody>
+	<table class="table table-hover">
+<thead>
+	<th>UUOO Reporte</th>
+	<th>Dirección UUOO Reporte</th>
+	<th>Solución Planteada</th>
+	<th>Imagen Inicial</th>
+</thead>
+<tbody>
+	<tr>
+	<td><p>{{incidencia.uuoorepo}}</p>
+	</td>
+	<td><p>{{incidencia.direccion}}</p>
+	</td>
+	<td><p>{{incidencia.solucionpla}}</p></td>
+	<td><img href='{{MEDIA_URL}}{{incidencia.imagenini}}' targed="_blank" src='{{MEDIA_URL}}{{incidencia.imagenini}}' height="150px" width="150px" class="img-responsive">
+	</td></tr>
+</tbody>
+</table>
+	</div>
+
+<div class="panel panel-primary">
+<div class="panel-heading">Solución:</div>
+<table class="table table-hover">
+<thead>
+	<th>UUOO Emite Req. Atención</th>
+	<th>Fecha Asignada Atención Reporte</th>
+	<th>Fecha Asignada Solucion Reporte</th>
+	<th>UUOO Area Usuaria que Atiende</th>
+	<th>Registro Usuario OSA que Atiende</th>
+</thead>
+<TBODY>
+	<tr>
+		<td>{% for item in solucion %}<p>{{item.uuoosol}}</p>{% empty %}
+				<p>Sin soluciones registradas</p>
+			{% endfor %}</td>
+		<td>{% for item in solucion %}<p>{{item.fechasol}}</p>{% empty %}
+				<p>Sin soluciones registradas</p>
+			{% endfor %}</td>
+		<td>{% for item in solucion %}<p>{{item.fechaeje}}</p>{% empty %}
+				<p>Sin soluciones registradas</p>
+			{% endfor %}</td>
+		<td>{% for item in solucion %}<p>{{item.uuooati}}</p>{% empty %}
+				<p>Sin soluciones registradas</p>
+			{% endfor %}</td>
+		<td>{% for item in solucion %}<p>{{item.reguosa}}</p>{% empty %}
+				<p>Sin soluciones registradas</p>
+			{% endfor %}</td>
+	</tr>
+</TBODY>
+</table>
+</div>
+	</div>
+</div>
+
+{% endblock %}

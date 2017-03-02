@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block titulo %}Nueva Incidencia{% endblock %}
+{% block style_css %}
+
+<script type="text/javascript">
+
+function confSubmit(form) {
+if (confirm("Está seguro que desea grabar esta incidencia?")) {
+form.submit();
+}
+
+else {
+alert("Ud. decidió no grabar la incidencia!");
+}
+}
+</script>
+{% endblock %}
+{% block encabezado %}{% endblock %}
+{% block contenido %}
+<div class="contenedor">
+<h3><span class="label label-primary">Registrar incidencia</span></h3>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+	<form id="form1" class="form-horizontal" method='post' enctype='multipart/form-data' action=''>
+	<div class="form group">
+	{% csrf_token %}
+  		<div class="form-group">
+    		<label class="col-sm-2 control-label">Documento Reporte:</label>
+    	<div class="col-sm-4">
+      	<input type="text" class="form-control" placeholder="Ejem. Documento referencial" name="docrepo">
+    	</div>
+  		</div>
+  		<div class="form-group">
+    		<label class="col-sm-2 control-label">Registro Usuario Reporta:(*)</label>
+    	<div class="col-sm-4">
+      	<input type="text" class="form-control" style="text-transform:uppercase;" placeholder="Ejem. RN55" maxlength="4" name="Regrepo" required>
+    	</div>
+  		</div>
+  		<div class="form-group">
+    		<label class="col-sm-2 control-label">Descripción Reporte:(*)</label>
+    	<div class="col-sm-4">
+      	<textarea  class="form-control" rows="3" placeholder="Descripción..." name="descripcion"></textarea>
+    	</div>
+  		</div>
+  		<div class="form-group">
+    		<label class="col-sm-2 control-label">UUOO Reporte:(*)</label>
+  		<div class="col-sm-4">
+  		<select class="form-control" name="uuoorepo">
+  		<option value="" selected disabled>-----------</option>
+  		<option>6N0000</option>
+        <option>6N0200</option>
+        <option>6N0300</option>
+        <option>6N0310</option>
+        <option>6N0320</option>
+        <option>6N0400</option>
+        <option>6N0500</option>
+        <option>6N0600</option>
+        <option>801000</option>
+		</select>
+		</div>
+		</div>
+  		<div class="form-group">
+    		<label class="col-sm-2 control-label">Dirección UUOO Reporte:(*)</label>
+  		<div class="col-sm-4">
+  		<select class="form-control" name="direccion">
+  		<option value="" selected disabled>-----------</option>
+  		<option>CSC HYO - Calle Real N°333 </option>
+      <option>Auditoría - Jr.Nemezio Raez N° 754 </option>
+      <option>CSC HYO II - Jr. Santiago Norero N° 330</option>
+      <option>CSC Chanchamayo - Jr. Arica N° 360 Urb. </option>
+      <option>CSC La Oroya - Av. Horacio Zevallos Gamez N° 313 </option>
+      <option>CSC Tarma - Jr. Arequipa N° 257, Int. 1 </option>
+      <option>CSC Huancavelica - Jr. Agustín Gamarra N° 319 </option>
+      <option>CSC Satipo - Jr. San Martín N° 462 </option>
+      <option>CSC OXAPAMPA - Prolong. Bolognesi MZ 014 Lote 09 Sub Lote 1 B Cercado</option>
+      <option>PTO CTRL CASARACRA - Carretera Central Km 10.5 Unidad de Peaje Casaracra</option>
+      <option>PTO CTRL HERRERÍA - Av. Perú s/n - Pampa del Carmen</option>
+      <option>ALMACEN EX PRONAA - Carretera Central K.M. 7.5 </option>
+      <option>ALMACEN LA OROYA - Av. Miguel Grau N° 530 </option>
+		</select>
+		</div>
+		</div>
+		<div class="form-group">
+    		<label class="col-sm-2 control-label">Registro Fotográfico Inicial:</label>
+    	<div class="col-sm-4">
+      	<input type="file" class="form-control" name="imagenini">
+    	</div>
+  		</div>
+  		<div class="form-group">
+    		<label class="col-sm-2 control-label">Solución Planteada:</label>
+    	<div class="col-sm-4">
+      	<textarea class="form-control" rows="3" placeholder="Solución..." name="solucionpla"></textarea>
+    	</div>
+  		</div>
+      <input type="hidden" name="flg_solucion" value='0'>
+      <input type="hidden" name="flg_cierre" value='0'>
+      <button type='submit' id="button1id" class="btn btn-primary" onClick="confSubmit(this.form);">Registrar </button>
+    <a class="btn btn-primary" href='/inicio'>Regresar  <SPAN class="badge"><</SPAN></a>
+		</div>
+	</form>
+	</div>
+</div>
+</div>	
+
+{% endblock %}

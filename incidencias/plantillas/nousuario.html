@@ -1,0 +1,46 @@
+{% extends 'base2.html' %}
+{% block contenido %}
+
+<div class="container">
+  
+  <div class="row" id="pwd-container">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <section class="login-form">
+        <form method='post' action='' role="login">{% csrf_token %}
+          <img src="http://www.sunat.gob.pe/img/Sunat-Logo.gif" class="img-responsive" alt="" />
+          <div class="labelo">
+          <h3><span class="label label-primary">DJANGEROS</span></h3></div>
+          <div class="alert alert-danger" role="alert">El usuario y la contraseña no coinciden o no existen!</div>
+          <input type="text" name="username" placeholder="Usuario" required class="form-control input-lg"  />
+          
+          <input type="password" name="password" class="form-control input-lg" id="clave" placeholder="Contraseña" required="" />
+          
+          
+          <div class="pwstrength_viewport_progress"></div>
+          
+          
+          <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Ingresar</button>
+          <div>
+            <!-- <a href="#">Create account</a> or <a href="#">reset password</a>-->
+          </div>
+          
+        </form>
+        
+        <div class="form-links">
+          <a href="http://www.djangeros.com">DJANGEROS</a>
+        </div>
+      </section>  
+      </div>
+      
+      <div class="col-md-4"></div>
+      
+
+  </div>
+  
+     
+  
+  
+</div>
+        
+{% endblock %}

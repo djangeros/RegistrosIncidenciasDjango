@@ -1,0 +1,228 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400);
+
+body, html{
+	font-family: 'Lato', sans-serif;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	color: #0062AE;
+}
+header {
+
+}
+.botones{
+	padding-left: 3em;
+	padding-bottom: 3em;
+}
+h1{
+	text-transform: uppercase;
+}
+h1 strong{
+	font-weight: 900;
+}
+h2{
+	text-transform: uppercase;
+	line-height: 20px;
+	margin:  0;
+}
+h3{
+font-size: 18px;
+font-weight: 900;
+}
+h4{
+	text-transform: uppercase;
+}
+h5{
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 20px;
+}
+p{
+	font-family: 'Open Sans', sans-serif;
+}
+p.intro{
+	font-size: 16px;
+	margin: 12px 0 0;
+	line-height: 24px;
+	font-family: 'Open Sans', sans-serif;
+}
+a{ color: #0062AE;}
+a:hover,
+a:focus{
+	text-decoration: none;
+	color: #0062AE;
+}
+ul{
+	list-style-type: none;
+}
+.page-header{
+	text-align: center;
+	padding: 5em 20em;
+ 	margin: 25%;
+}
+
+.leyenda{
+	height: 20px;
+	width: 150px;
+	text-align: center;
+	padding-bottom: 5em;
+	padding-left: 40%;
+}
+#formulario{
+  width: 30%;
+  margin: 0 auto;
+  text-align: left;
+}
+.grafico{
+	text-align: center;
+}
+.reporte{
+	text-indent: center;
+	padding-top: .3em;
+	padding-bottom: .3em;
+	padding-left: 30%;
+}
+
+/* Navigation */
+#tf-menu {
+	padding: 20px;
+	transition: all 0.8s;
+}
+#tf-menu.navbar-default {
+	border-color: rgba(171, 20, 64, 0);
+}
+#tf-menu a.navbar-brand {
+text-transform: uppercase;
+font-size: 18px;
+color: #0062AE;
+font-weight: 900;
+}
+
+
+#tf-menu.navbar-default .navbar-nav > li > a {
+	text-transform: uppercase;
+	color: #0062AE;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+.on {
+	background-color: #222222 !important;
+	padding: 0 !important;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #000 !important;
+	background-color: transparent;
+	font-weight: 700;
+}
+.contenedor{
+	padding-left: 3em;
+	padding-top: 3em;
+	padding-right: 3em;
+}
+.navbar-toggle {
+	border-radius: 0;
+	}
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+	background-color: #0062AE;
+	border-color: #FCAC45;
+}
+
+.navbar-default .navbar-toggle:hover>.icon-bar {
+	background-color: #0062AE;
+	}
+#usuarios_14_dias{
+	padding-left: 30em;
+}
+#usuarios_12_dias{
+	padding-left: 30em;
+}
+
+footer{
+	background: #0062AE;
+	color: WHITE;
+	padding-left: 3em;
+	position:relative;
+    bottom:0px;
+    width: 100%;
+    margin: 0;
+}
+
+@CHARSET "UTF-8";
+/*
+over-ride "Weak" message, show font in dark grey
+*/
+
+.progress-bar {
+    color: #333;
+} 
+
+/*
+Reference:
+http://www.bootstrapzen.com/item/135/simple-login-form-logo/
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	outline: none;
+}
+
+    .form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+
+body {
+	background: url(http://www.prudhoebusiness.co.uk/wp-content/uploads/2015/05/free-office-wallpaper-26001-26685-hd-wallpapers.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-form {
+	margin-top: 60px;
+	padding-top: 5em;
+}
+
+form[role=login] {
+	color: #5d5d5d;
+	background: #f2f2f2;
+	padding: 26px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+	form[role=login] img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 35px;
+	}
+	form[role=login] input,
+	form[role=login] button {
+		font-size: 18px;
+		margin: 16px 0;
+	}
+	form[role=login] > div {
+		text-align: center;
+	}
+	
+.form-links {
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 50px;
+}
+	.form-links a {
+		color: #fff;
+	}

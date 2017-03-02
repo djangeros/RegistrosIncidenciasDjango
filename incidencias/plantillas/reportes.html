@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block titulo %}Bienvenido{% endblock %}
+{% block encabezado %} 
+{% endblock %}
+{% block contenido %}
+<div class="contenedor">
+<div class="panel panel-primary">
+    <div class="img_error2">
+        <img src="{{STATIC_URL}}img/banner1.jpg" class="img-responsive" align="center">
+    </div>
+</div>
+<div class="grafico">
+<h1><span class="label label-primary">Total Incidencias</span></h1>
+    <div id="usuarios_14_dias">
+        <div style="width: 50%">
+            <canvas id="canvas" height="450" width="600"></canvas>
+        </div>
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">REPORTES ADICIONALES:</div>
+    <div class="reporte">
+    <a class="btn btn-primary" href='/reportes'>Totales</a>
+    <a class="btn btn-primary" href='/reportes1'>Promedios Incidencias</a>
+    <a class="btn btn-primary" href='/reportes2'>Incidencias / Área</a>
+    <a class="btn btn-primary" href='/reportes3'>Procesos/ Área</a>
+</div>
+</div>
+</div>
+<script>
+    var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
+
+    var barChartData = {
+        labels : ["REGISTRADAS","ASIGNADAS","ATENDIDAS"],
+        datasets : [
+            {
+                fillColor : "rgba(0, 82, 204,0.5)",
+                strokeColor : "rgba(0, 82, 204,0.8)",
+                highlightFill: "rgba(0, 204, 102,0.75)",
+                highlightStroke: "rgb(255, 51, 51,0.75)",
+                data : [{{info}},{{asig1}},{{cie}}]
+            }
+        ]
+
+    }
+    window.onload = function(){
+        var ctx = document.getElementById("canvas").getContext("2d");
+        window.myBar = new Chart(ctx).Bar(barChartData, {
+            responsive : true
+        });
+    }
+
+    </script>
+    
+{% endblock %}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Registro de Incidencias- {% block titulo %}{% endblock %}</title>
+  <link rel='stylesheet' href='{{STATIC_URL}}css/style.css'>
+  <link rel='stylesheet' href='{{STATIC_URL}}css/normalize.css'>
+  <!-- Slickgrid -->
+  <link rel="stylesheet" href='{{STATIC_URL}}SlickGrid/slick.grid.css' type="text/css"/>
+  <link rel="stylesheet" href='{{STATIC_URL}}SlickGrid/smoothness/jquery-ui-1.8.16.custom.css' type="text/css"/>
+  <link rel="stylesheet" href='{{STATIC_URL}}SlickGrid/ccs/smoothness/slick-default-theme.css' type="text/css"/>
+  <link rel="stylesheet" href='{{STATIC_URL}}SlickGrid/examples.css' type="text/css"/>
+  <style>
+    .cell-title {
+      font-weight: bold;
+    }
+    .cell-effort-driven {
+      text-align: center;
+    }
+  </style>
+  <!-- Latest compiled and minified CSS -->
+<link rel='stylesheet' href='{{STATIC_URL}}css/bootstrap.min.css'>
+
+<!-- Optional theme -->
+<link rel='stylesheet' href='{{STATIC_URL}}css/bootstrap-theme.min.css'>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src='{{STATIC_URL}}js/jquery-2.1.1.min.js'></script>
+<script src='{{STATIC_URL}}js/bootstrap.js'></script>
+<script src='{{STATIC_URL}}js/Chart.js'></script>
+
+  <link rel='shortcut icon' href='{{STATIC_URL}}img/icono.PNG'>
+  
+  
+  <script src='{{STATIC_URL}}js/demo.js'></script>
+  <script type="text/javascript" src="js/modernizr.custom.js"></script>
+  {% block style_css %}{% endblock %}
+</head>
+<body>
+      <!-- Navigation
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href='/inicio'>Incidencias Menores</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav nav-pills">
+            <li role="presentation"><a href='/reportes' class="page-scroll">Reportes</a></li>
+              <li role="presentation"><a href='/inicio' class="page-scroll">Consultas</a></li>
+              <li role="presentation"><a href='/incidencia/nueva' class="page-scroll">Registro</a></li>
+              <li role="presentation"><a href='/asignaciones' class="page-scroll">Asignación</a></li>
+              <li role="presentation"><a href='/cierrei' class="page-scroll">Conclusión</a></li>
+              <li><a href='/editar_contrasena' class="page-scroll">Cambiar Contraseña</a></li>
+              <li role="presentation" class="active"><a href='/cerrar' class="page-scroll">SALIR</a></li>
+          </ul>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  <header>
+	{% block encabezado %}{% endblock %}
+	<hr>
+  </header>	
+  <section class='contenido'>
+	{% block contenido %}{% endblock %}
+  </section>
+  <footer>
+  <p>DJANGEROS</p>
+  <p>Control de Incidencias &copy;2017</p>
+  </footer>
+</body>
+</html>
