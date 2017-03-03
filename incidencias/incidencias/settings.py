@@ -55,7 +55,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'incidencias',
         'USER': 'root',
-        'PASSWORD': 'Intendencia2013',
+        'PASSWORD': '-------------',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
@@ -151,10 +151,3 @@ LOGGING = {
         },
     }
 }
-
-#Configuraciones para enviar mensajes usando correo institucional
-EMAIL_USE_TLS = True
-EMAIL_HOST = '10.59.2.41'
-EMAIL_HOST_USER = 'controldeuda_junin@sunat.gob.pe'
-EMAIL_HOST_PASSWORD = 'Actitud2016'
-EMAIL_PORT = 443
